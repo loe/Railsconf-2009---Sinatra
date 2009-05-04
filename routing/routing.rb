@@ -1,12 +1,10 @@
 require 'rubygems'
 require 'sinatra'
 
-use Rack::Accepts
-
-get '/foo.html' do
+class MyDefaultApp < Sinatra::Default
   
-end
-
-get '/foo.js' do
+  get '/:name' do |name|
+    "Hello #{name}"
+  end
   
 end
