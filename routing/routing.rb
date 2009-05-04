@@ -1,11 +1,15 @@
 require 'rubygems'
 require 'sinatra/base'
 
-class MyDefaultApp < Sinatra::Default
-  
-  get '/:name' do |name|
-    # ... do something ...
-    forward # @app.call(env)
-  end
+get '/admin/*' do
+  halt(401, "get out!") unless authenticated?
+  pass
+end
+
+get '/admin/:name' do
+  pass
+end
+
+get '/admin/super-top-secret/:name' do
   
 end
