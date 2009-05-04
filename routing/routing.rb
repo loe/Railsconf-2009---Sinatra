@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 
-get '/:name.txt?' do
+get '/:name/*/*' do
   params.inspect
 end
