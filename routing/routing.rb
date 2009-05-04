@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 
-get /^\/[asdf](.*)/ do
-  params.inspect
+get '/:name' do |name|
+ "Hello #{name}"
 end
