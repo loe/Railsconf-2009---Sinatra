@@ -3,5 +3,18 @@ require 'sinatra'
 require 'json'
 
 get '/' do
-  haml :index
+  erb :index
 end
+
+use_in_file_templates!
+
+__END__
+
+
+@@index
+
+<html>
+  <body>
+     Hello from Sinatra + ERB in the file
+  </body>
+</html>
