@@ -1,6 +1,11 @@
 class BasicRack
   def call(env)
-    body = env.inspect
+    body = if env["PATH_INFO"] == "/foo"
+      "in foo!"
+    else
+      "in other!"
+    end
+    
     [
       200,
       {
