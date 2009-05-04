@@ -1,12 +1,12 @@
 require 'rubygems' # This is probably a bad idea, but we'll leave that argument for another day.
 require 'sinatra'
 
-module Helpers
-  def self.dosomething(args)
-    
-  end
+before do
+  @note = 'Hi!'
+  request.path_info = '/foo/bar/baz'
 end
 
-get '/' do
-  Helpers.dosomething
+get '/foo/*' do
+  @note #=> 'Hi!'
+  params[:splat] #=> 'bar/baz'
 end
