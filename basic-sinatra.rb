@@ -2,7 +2,14 @@ require 'rubygems' # This is probably a bad idea, but we'll leave that argument 
 require 'sinatra'
 require 'json'
 
+helpers do
+  def utf8(type)
+    content_type type, :charset => 'utf-8'
+  end
+end
+
 get '/' do
+  utf8('text/html')
   erb :index
 end
 
