@@ -6,6 +6,10 @@ get '/' do
   erb :index
 end
 
+get '/foo' do
+  erb :foo
+end
+
 use_in_file_templates!
 
 __END__
@@ -18,3 +22,7 @@ __END__
      Hello from Sinatra + ERB in the file
   </body>
 </html>
+
+@@foo
+
+<h1>FOO!</h1>
