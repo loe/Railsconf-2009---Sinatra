@@ -3,6 +3,5 @@ require 'sinatra'
 require 'json'
 
 get '/' do
-  content_type 'application/json'
-  {'foo' => 'goo'}.to_json
+  erb :index
 end
