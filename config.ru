@@ -1,10 +1,6 @@
 class BasicRack
   def call(env)
-    body = if env["PATH_INFO"] == "/foo"
-      "in foo!"
-    else
-      "in other!"
-    end
+    body = "hello from app " + env["myrackapp.value"]
     
     [
       200,
@@ -16,5 +12,18 @@ class BasicRack
     ]
   end
 end
+
+class MyMiddleware
+  def initialize(app)
+    @app = app
+  end
+  
+  def call(env)
+    env["myrackapp.value"] = "sadlkjflkfj"
+    @app.call(env)
+  end
+end
+
+use MyMiddleware
 
 run BasicRack.new
