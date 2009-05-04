@@ -1,35 +1,12 @@
 require 'rubygems' # This is probably a bad idea, but we'll leave that argument for another day.
 require 'sinatra'
-require 'json'
 
-helpers do
-  def utf8(type)
-    content_type type, :charset => 'utf-8'
+module Helpers
+  def self.dosomething(args)
+    
   end
 end
 
 get '/' do
-  utf8('text/html')
-  erb :index
+  Helpers.dosomething
 end
-
-get '/foo' do
-  erb :foo
-end
-
-use_in_file_templates!
-
-__END__
-
-
-@@index
-
-<html>
-  <body>
-     Hello from Sinatra + ERB in the file
-  </body>
-</html>
-
-@@foo
-
-<h1>FOO!</h1>
