@@ -8,3 +8,5 @@ class MyDefaultApp < Sinatra::Default
   end
   
 end
+
+MyDefaultApp.run!
