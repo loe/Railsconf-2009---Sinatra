@@ -1,12 +1,13 @@
 class BasicRack
   def call(env)
+    body = env.inspect
     [
       200,
       {
-        'Content-Length' => '2',
+        'Content-Length' => body.size.to_s,
         'Content-Type' => 'text/html'
       },
-      ['hi']
+      [body]
     ]
   end
 end
