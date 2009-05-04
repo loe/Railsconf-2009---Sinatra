@@ -1,6 +1,6 @@
 class BasicRack
   def call(env)
-    body = "hello from app " + env["myrackapp.value"]
+    body = "hello from app"
     
     [
       200,
@@ -20,7 +20,9 @@ class MyMiddleware
   
   def call(env)
     env["myrackapp.value"] = "sadlkjflkfj"
-    @app.call(env)
+    status, headers, body = @app.call(env)
+    body.map! {|part| part.upcase}
+    [status, headers, body]
   end
 end
 
