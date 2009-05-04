@@ -21,4 +21,6 @@ module Sinatra
     
   end
   
+  helpers CacheControl
+  
 end
