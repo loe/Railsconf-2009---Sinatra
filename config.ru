@@ -24,6 +24,7 @@ class MyMiddleware
   end
 end
 
+use Rack::CommonLogger
 use MyMiddleware
 
 run BasicRack.new
