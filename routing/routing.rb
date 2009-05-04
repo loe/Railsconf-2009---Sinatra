@@ -1,6 +1,12 @@
 require 'rubygems'
 require 'sinatra'
 
-get '/:name' do |name|
- "Hello #{name}"
+use Rack::Accepts
+
+get '/foo.html' do
+  
+end
+
+get '/foo.js' do
+  
 end
