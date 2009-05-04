@@ -3,5 +3,5 @@ require 'sinatra'
 require 'json'
 
 get '/' do
-  erb :index
+  haml :index
 end
