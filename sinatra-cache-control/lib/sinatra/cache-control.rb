@@ -1,0 +1,1 @@
+# Don't require sinatra, it should be required before the plugin
